@@ -11,7 +11,7 @@ try {
 }
 
 try {
-    $sql = 'SELECT categorys.name, bookmarks.title FROM categorys INNER JOIN bookmarks ON categorys.id = bookmarks.category_id';
+    $sql = 'SELECT bookmarks.id, categorys.name, bookmarks.title FROM categorys INNER JOIN bookmarks ON categorys.id = bookmarks.category_id';
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
     $bookmarkLists = $stmt->fetchAll(PDO::FETCH_ASSOC);

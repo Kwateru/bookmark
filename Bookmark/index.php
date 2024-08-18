@@ -36,11 +36,19 @@ include('function/bookmark_get.php');
                 <?php
                 foreach($bookmarkLists as $bookmarkList){
                     echo <<<EOM
-                    <tr>
-                    <td>{$bookmarkList['name']}</td>
-                    <td>{$bookmarkList['title']}</td>
-                    <td><a class="uk-button uk-button-default" href="{$bookmarkList['url']}"><i class="fa-solid fa-display" style="color: #74C0FC;"></i> 表示</a></td>
-                    <td><a class="uk-button uk-button-default" href=""><i class="fa-solid fa-trash" style="color: #333;"></i> 削除</a></td>
+                    <tr id="{$bookmarkList['id']}">
+                        <td>{$bookmarkList['name']}</td>
+                        <td>{$bookmarkList['title']}</td>
+                        <td>
+                            <a class="uk-button uk-button-default" href="{$bookmarkList['url']}">
+                                <i class="fa-solid fa-display" style="color: #74C0FC;"></i> 表示
+                            </a>
+                        </td>
+                        <td>
+                            <a class="uk-button uk-button-default" href="#" onclick='dataTableRow({$bookmarkList['id']})'>
+                                <i class="fa-solid fa-trash" style="color: #333;"></i> 削除
+                            </a>
+                        </td>
                     </tr>
                     EOM;
                 }
@@ -50,6 +58,7 @@ include('function/bookmark_get.php');
         </table>
     </div>
     <script src="https://kit.fontawesome.com/7b558a82c5.js" crossorigin="anonymous"></script>
+    <script src="js/util.js"></script>
 </body>
 
 </html>
