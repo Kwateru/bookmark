@@ -22,6 +22,16 @@ include('function/bookmark_get.php');
             <a class="uk-button uk-button-default" href="bookmark_insert.php"><i class="fa-solid fa-plus fa-xl" style="color: #17a67b;"></i> ブックマーク追加</a>
         </div>
 
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="カテゴリ" id="">
+            <input class="uk-input" type="text" placeholder="URL" id="searchBox" onkeyup="searchTitle()">
+            <div id="searchResults"></div>
+        </div>
+
+        <button class="uk-button uk-button-primary" type="button">
+            登録
+        </button>
+
         <!-- 取得したデータをテーブルに展開 -->
         <table class="uk-table uk-table-justify uk-table-divider">
             <thead>
@@ -34,7 +44,7 @@ include('function/bookmark_get.php');
             </thead>
             <tbody>
                 <?php
-                foreach($bookmarkLists as $bookmarkList){
+                foreach ($bookmarkLists as $bookmarkList) {
                     echo <<<EOM
                     <tr id="{$bookmarkList['id']}">
                         <td>{$bookmarkList['name']}</td>
@@ -52,7 +62,7 @@ include('function/bookmark_get.php');
                     </tr>
                     EOM;
                 }
-                
+
                 ?>
             </tbody>
         </table>
