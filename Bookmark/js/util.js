@@ -9,20 +9,23 @@ function dataTableRow(bookmarkId) {
 function searchTitle() {
     const searchBoxValue = document.getElementById('searchBox').value;
     if (searchBoxValue.length > 2) {  // 少なくとも3文字以上で検索開始
-        fetch('search.php?query=' + encodeURIComponent(searchBoxValue))
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('searchResults').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
+        const ajax = new XMLHttpRequest();
+        ajax.open('GET', 'search.php?query=' + encodeURIComponent(searchBoxValue), true);
+        ajax.onload = function() {
+            if (ajax.status === 200) {
+                document.getElementById('searchResults').innerHTML = ajax.responseText;
+            }
+        };
+        ajax.send();
     } else {
         document.getElementById('searchResults').innerHTML = ''; // クエリが短い場合、結果をクリア
     }
+}
+
+// 登録処理
+function sendDate(){
+    let categoryValue = document.getElementById('categoryBox').value;
+    let urlBoxValue = document.getElementById('searchBox').value;
+    console.log(categoryValue);
+    console.log(urlBoxValue);
 }

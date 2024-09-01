@@ -3,6 +3,9 @@ $title = "はじめてのブックマーク";
 
 // DBからブックマークを取得
 include('function/bookmark_get.php');
+
+// カテゴリを動的に選択
+include('function/category_get.php');
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +26,22 @@ include('function/bookmark_get.php');
         </div>
 
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="カテゴリ" id="">
+            <select name="category_id" class="uk-select" id="categoryBox" required>
+                <option value="">カテゴリを選択して下さい。</option>
+                <?php
+                foreach ($categoryList as $category) {
+                    echo '<option value="' . $category['id'] . '">' . $category['name'] . '</option>';
+                }
+                ?>
+            </select>
+        </div>
+
+        <div class="uk-margin">
             <input class="uk-input" type="text" placeholder="URL" id="searchBox" onkeyup="searchTitle()">
             <div id="searchResults"></div>
         </div>
 
-        <button class="uk-button uk-button-primary" type="button">
+        <button class="uk-button uk-button-primary" type="button" onclick="sendDate()">
             登録
         </button>
 
