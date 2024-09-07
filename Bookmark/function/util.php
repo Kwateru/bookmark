@@ -1,6 +1,11 @@
 <?php
 // 外部サイトURLからページタイトルを取得
 function get_title_from_URL($url){
+    // 先頭がhttpかチェック
+    if (strpos($url, 'http') !== 0) {
+        header('Location:../index.php');
+        exit;
+    }
     $urls = file_get_contents($url);
     //タイトル取得
     $pattern  = '/<title>([\s\S]*?)<\/title>/i';

@@ -24,9 +24,15 @@ function searchTitle() {
 
 // 登録処理
 function sendDate() {
-    // input要素を取得
+    // 入力欄を取得
     let categoryValue = document.getElementById('categoryBox').value;
     let urlBoxValue = document.getElementById('searchBox').value;
+
+    // 入力欄のバリデーション
+    if (categoryValue === '' || urlBoxValue === '') {
+        alert('カテゴリとURLは必須になります。\n再度やり直して下さい。');
+        return;
+    }
 
     const ajax = new XMLHttpRequest();
     ajax.open('POST', 'function/bookmark_save.php', true);
@@ -41,5 +47,5 @@ function sendDate() {
         }
     };
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    ajax.send('category_id=' + encodeURIComponent(categoryValue) +'&url=' + encodeURIComponent(urlBoxValue));
+    ajax.send('category_id=' + encodeURIComponent(categoryValue) + '&url=' + encodeURIComponent(urlBoxValue));
 }
