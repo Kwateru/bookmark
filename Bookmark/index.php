@@ -80,7 +80,6 @@ include('function/category_get.php');
             </tbody>
         </table>
     </div>
-    <script src="https://kit.fontawesome.com/7b558a82c5.js" crossorigin="anonymous"></script>
     <script src="js/util.js"></script>
 </body>
 
