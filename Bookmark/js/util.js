@@ -32,6 +32,7 @@ function sendDate() {
     ajax.open('POST', 'function/bookmark_save.php', true);
     ajax.onload = function () {
         if (ajax.status >= 200 && ajax.status < 300) {
+            document.body.innerHTML = ajax.responseText;
             // inputをリセット
             document.getElementById('categoryBox').value = '';
             document.getElementById('searchBox').value = '';
