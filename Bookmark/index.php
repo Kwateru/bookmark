@@ -37,7 +37,7 @@ include('function/category_get.php');
         </div>
 
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="URL" id="searchBox" onkeyup="searchTitle()">
+            <input class="uk-input" type="text" placeholder="URL" id="searchBox" name="url" onkeyup="searchTitle()">
             <div id="searchResults"></div>
         </div>
 

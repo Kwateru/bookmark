@@ -1,6 +1,8 @@
 <?php
+// DB接続
 include('../db/connection.php');
 
+// URLからタイトルを取得/短縮
 include('util.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['category_id']) && !empty($_POST['url'])) {

@@ -1,4 +1,5 @@
 <?php
+// DB接続
 include('./db/connection.php');
 
 // ユーザーの検索クエリを取得

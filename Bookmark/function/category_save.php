@@ -1,4 +1,5 @@
 <?php
+// DB接続
 include('../db/connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['name'])) {
