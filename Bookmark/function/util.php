@@ -6,7 +6,15 @@ function get_title_from_URL($url){
         header('Location:../index.php');
         exit;
     }
-    $urls = file_get_contents($url);
+
+    // User-Agentを設定してリクエスト
+    $context = stream_context_create([
+        'http' => [
+            'header' => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.101 Safari/537.36\r\n"
+        ]
+    ]);
+    $urls = file_get_contents($url, false, $context);
+
     //タイトル取得
     $pattern  = '/<title>([\s\S]*?)<\/title>/i';
     preg_match($pattern, $urls, $match);
