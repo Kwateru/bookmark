@@ -63,7 +63,7 @@ include('function/category_get.php');
                         <td>{$bookmarkList['name']}</td>
                         <td>{$bookmarkList['title']}</td>
                         <td>
-                            <a class="uk-button uk-button-default" href="{$bookmarkList['url']}">
+                            <a class="uk-button uk-button-default" href="{$bookmarkList['url']}" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-solid fa-display" style="color: #74C0FC;"></i> 表示
                             </a>
                         </td>

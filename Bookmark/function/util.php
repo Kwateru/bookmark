@@ -1,6 +1,7 @@
 <?php
 // 外部サイトURLからページタイトルを取得
-function get_title_from_URL($url){
+function get_title_from_URL($url)
+{
     // 先頭がhttpかチェック
     if (strpos($url, 'http') !== 0) {
         header('Location:../index.php');
@@ -24,11 +25,11 @@ function get_title_from_URL($url){
 }
 
 // ブックマークのタイトルを短縮
-function bookmark_title_short($title, $titleLength){
+function bookmark_title_short($title, $titleLength)
+{
     if (mb_strlen($title) > $titleLength) {
         return mb_substr($title, 0, $titleLength) . '...';
-    }elseif (mb_strlen($title) <= $titleLength) {
+    } elseif (mb_strlen($title) <= $titleLength) {
         return $title;
     }
 }
-?>
