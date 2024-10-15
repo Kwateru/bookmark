@@ -1,8 +1,19 @@
 // ブックマーク削除
 function dataTableRow(bookmarkId) {
-    let delete_element = document.getElementById(bookmarkId);
-    delete_element.remove();
-    console.log("削除しました。");
+    const ajax = new XMLHttpRequest();
+    ajax.open('POST', 'function/bookmark_delete.php', true);
+    ajax.onload = function (){
+        if (ajax.status >= 200 && ajax.status < 300){
+            // 成功した時にエレメントを削除
+            let delete_element = document.getElementById(bookmarkId);
+            delete_element.remove();
+            console.log("削除しました。");
+        }else{
+            alert('失敗しました。エラーコード：' + ajax.status);
+        }
+    };
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send('id=' + encodeURIComponent(bookmarkId))
 }
 
 // リアルタイム検索
