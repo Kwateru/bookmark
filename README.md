@@ -48,32 +48,12 @@ WEBサイトのURLとタイトルを保存するアプリケーション
 - タイトルが長い場合は短縮の処理を追加したこと
 
 ## 5.仕様動作のイメージ
-編集中
+https://github.com/user-attachments/assets/d292a144-8105-4cd1-b2d8-662bb9d69e74
+
+※GIFが強制的に動画ファイルに変わる事象を確認。（上記、一時的な対応）
 
 
-
-## 6.機能一覧
-| トップ画面 |　ブックマーク追加 |
-| ---- | ---- |
-| ![image](https://github.com/user-attachments/assets/378283f4-0209-464e-8587-1b86ab4d79c1) | ああ |
-| すべてのブックマークがTOPページに一覧で表示されるように実装しました。 | [ログイン画面]説明（例：●●実装しました。） |
-
-| 事業者選択画面 |　請求書作成画面 |
-| ---- | ---- |
-| ![事業者選択画面] | ![請求書作成画面] |
-| [事業者選択画面]説明 | [請求書作成画面]説明 |
-
-| 請求書詳細画面 |　PDF出力画面 |
-| ---- | ---- |
-| ![請求書詳細画面] | ![PDF出力画面] |
-| [請求書詳細画面]説明 | [PDF出力画面]説明 |
-
-| 登録するマスタの選択画面 |　マスタの登録画面 |
-| ---- | ---- |
-| ![請求書詳細画面] | ![PDF出力画面] |
-| [請求書詳細画面]説明 | [PDF出力画面]説明 |
-
-## 7.使用技術
+## 6.使用技術
 | Category          | Technology Stack    | 
 | ----------------- | ------------------- | 
 | Frontend          | HTML, CSS（UIkit）, JavaScript | 
@@ -82,11 +62,3 @@ WEBサイトのURLとタイトルを保存するアプリケーション
 | Environment setup | Docker              | 
 | etc.              | Git, GitHub, vscode | 
 
-他選択肢：
-Infrastructure：Amazon Web Services, Vercel
-Monitoring：Sentry, UptimeRobot
-CI/CD：GitHub Actions
-Design：Figma, Lucid
-
-
-## 8.今後の展望
